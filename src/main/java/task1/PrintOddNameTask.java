@@ -4,7 +4,7 @@ public class PrintOddNameTask {
     public static void main(String[] args) {
         String[] names = new String[]{"Ivan", "Oleksandra", "Petro", "Leonid", "Maks", "Masha"};
 
-        PrintName printOddName = (array) -> {
+        PrintName printOddName = array -> {
             String result = "";
             for (int i = 0; i < array.length; i++) {
                 if (i % 2 != 0) {
