@@ -2,7 +2,8 @@ package task1;
 
 public class PrintOddNameTask {
     public static void main(String[] args) {
-        String[] names = new String[]{"Ivan", "Oleksandra", "Petro", "Leonid", "Maks", "Masha"};
+        String[] names = new String[]{"Ivan", "Oleksandra", "Petro", "Leonid",
+                "Maks", "Masha", "Andriy", "Orest", "Anna", "Viktoria"};
 
         PrintName printOddName = array -> {
             String result = "";
