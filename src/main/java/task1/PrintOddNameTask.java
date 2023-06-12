@@ -1,24 +1,19 @@
 package task1;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class PrintOddNameTask {
     public static void main(String[] args) {
-        String[] names = new String[]{"Ivan", "Oleksandra", "Petro", "Leonid",
-                "Maks", "Masha", "Andriy", "Orest", "Anna", "Viktoria"};
+        List<String> names = List.of("Ivan", "Oleksandra", "Petro", "Leonid",
+                "Maks", "Masha", "Andriy", "Orest", "Anna", "Viktoria");
 
-        PrintName printOddName = array -> {
-            String result = "";
-            for (int i = 0; i < array.length; i++) {
-                if (i % 2 != 0) {
-                    result += i + ". " + array[i];
-                }
+        String result = IntStream.range(0, names.size())
+                .filter(i -> i % 2 == 0)
+                .mapToObj(i -> (i + 1) + ". " + names.get(i))
+                .collect(Collectors.joining(", "));
 
-                if (i % 2 != 0 && i < array.length - 1) {
-                    result += ", ";
-                }
-            }
-            return result;
-        };
-
-        System.out.println("printOddName = " + printOddName.print(names));
+        System.out.println(result);
     }
 }
